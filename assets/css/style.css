@@ -39,5 +39,47 @@ body.wrong {
 }
 
 .btn-grid {
-    
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin:20px 0;
+}
+
+.btn {
+    --color: var(--color-neutral);
+    border: 1px solid hsl(var(-- color), 100%, 30%);
+    background-color: hsl(var(-- color), 100%, 50%);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+}
+
+.btn:hover {
+    border-color: black;
+}
+
+.btn.correct {
+    --color: var(--color-correct);
+    color: black;
+}
+
+.btn.wrong {
+    --color: var(--color-wrong);
+}
+
+.start-btn, .next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
 }
