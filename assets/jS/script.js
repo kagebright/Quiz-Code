@@ -1,72 +1,17 @@
 //defining all variables
-const startButton = document.getElementById('start-btn')
+const startElement = document.getElementById("start")
 const nextButton = document.getElementById('start-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
-
-startButton.addEventListener('click', startGame)
-nextButton.addEventListener('click', () => {
-    currentQuestionIndex++
-    setNextQuestion()
-})
-
-function startGame() {
-    startButton.classList.add('hide')
-    questionContainerElement.classList.remove('hide')
-    setNextQuestion()
-}
-
-function setNextQuestion() {
-    resetState()
-    showQuestion()
-}
-
-function showQuestion(question) {
-    questionElement.innerText = question.question
-    question.answers.forEach(answer => {
-        const button = document.createElement('button')
-        button.innerText = answer.text
-        button.classLisst.add('btn')
-        if (answer.correct) {
-            button.dataset.correct = answer.correct
-        }
-        button.addEventListener('click', selectAnswer)
-        answerButtonsElement.appendChild(button)
-    })
-}
-
-function resetState() {
-    nextButton.classList.add('hide')
-    while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild
-        (answerButtonsElement.firstChild)
-    }
-}
-
-function selectAnswer() {
-    const selectedButton = e.target
-    const correct = selectButton.dataset.correct
-    setStatusClass(document.body, correct)
-    Array.from(answerButtonsElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct)
-    })
-    nextButton.classList.remove("hide")
-}
-
-function setStatusClass(element, correct) {
-    clearStatusClass(element)
-    if (correct) {
-        element.classList.add('correct')
-    } else {
-        element.classList.add('wrong')
-    }
-}
-
-function clearStatusClass(element) {
-    element.classList.remove('correct')
-    element.classList.remove('wrong')
-}
+const countdownElement = document.getElementById("countdown");
+const scoreElement = document.getElementById("score");
+const highscoreElement = document.getElementById("highscore");
+const initialsEl = getElementById("initials");
+let timeLeft = 60;
+let quizScore = 100;
+let index = 1;
+let games = 1;
 
 //Questions for the quiz
 const questions = [
@@ -109,8 +54,110 @@ const questions = [
         3: "Carbon dioxide",
         },
         correctAnswer: "Nitrogen"
-
     }
-]
+];
 
+//code for the countdown when the start button is clicked
+startButton.addEventListener("click", function () {
+    countdownElement();
+    renderQuestions(questions[0]);
+});
 
+//continuation of the quiz after each question
+questionElement.addEventListener("click", function(event) {
+    if (index == 5) {
+        alert("Thank you for participating! Game Over! Please submit your and try again");
+    } else if (event.target.textContent != questions[index - 1].correctAnswer) {
+        timeLeft -=10;
+    } else {
+        index++;
+        console.log(timeLeft);
+        renderQuestions(questions[index - 1]);
+    }
+});
+
+//100 points system, 20 points per question
+questionElement.addEventListener("click",function(event) {
+   if (event.target.textConttent === questions[index -1].correctAnswer) {
+    quizScore += 20;
+    scoreElement.textContent = "Your score = " + quizScore;
+   } else {
+    quizScore -= 20;
+    scoreElement.textContent = "Your score = " + quizScore;
+    setTimeout(questions[index - 1]);
+} 
+});
+
+//60 seconds countdown
+function countdown() {
+    let timeInterval = setInterval(function() {
+        if (timeLeft >1) {
+            countdownElement.textContent = timeLeft;
+            timeLeft--;
+        } else {
+            alert("Time's Up!");
+            clearInterval(timeInterval);
+        }
+    }, 1000);
+}
+
+function renderQuestions(validQuestion) {
+    questionElement.innerHTML = "";
+  
+    // creates the questions and options and then appends them to the screen. Saw a youtube video on how to do this
+    let questionAsked = document.createElement("p");
+    let optionsList = document.createElement("ol");
+    let option1 = document.createElement("li");
+    let option2 = document.createElement("li");
+    let option3 = document.createElement("li");
+    let option4 = document.createElement("li");
+  
+    questionAsked.textContent = validQuestion.question;
+    option1.textContent = validQuestion.options[1];
+    option2.textContent = validQuestion.options[2];
+    option3.textContent = validQuestion.options[3];
+    option4.textContent = validQuestion.options[4];
+  
+    questionElement.append(questionAsked);
+    questionElement.append(optionsList);
+    optionsList.append(option1);
+    optionsList.append(option2);
+    optionsList.append(option3);
+    optionsList.append(option4);
+  }
+  
+  // Setting up local storage for highscores and storage
+  submitEl.addEventListener("click", function (event) {
+    event.preventDefault();
+    let game = {
+      initials: initialsEl.value,
+      score: quizScore,
+    };
+    games.push(game);
+    privateData();
+    renderTheGame();
+  });
+  
+  function renderTheGame() {
+    for (let i = 0; i < games.length; i++) {
+      console.log(games[i]);
+      let highScores = document.createElement("li");
+      highScores.textContent = games[i].initials + games[i].score;
+      highscoreEl.append(highScores);
+    }
+  
+    console.log(games.length);
+  }
+  
+  function privateData() {
+    console.log(games);
+    localStorage.setItem("games", JSON.stringify(games));
+  }
+  function storeData() {
+    let privateData = JSON.parse (localStorage.getItem("games"));
+    if (privateData !== null) {
+      games = privateData;
+    }
+  }
+  
+  storeData();
