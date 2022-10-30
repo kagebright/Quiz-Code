@@ -8,22 +8,24 @@
     <title>Code Quiz</title>
 </head>
 <body>
-    <div class="container">
-        <div id="question-container" class="hide"></div>
-            <div id="question">Question</div>
-            <div id="answer-button" class="btn-grid">
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 2</button>
-                <button class="btn">Answer 3</button>
-                <button class="btn">Answer 4</button>
-                <button class="btn">Answer 5</button>
-            </div>
-        <div class="controls">
-            <button id="start-btn" class="start">Start</button>
-            <button id="next-btn" class="next">Next</button>
-        </div>
-    </div>
-
-    <script src="./assets/js/script.js"></script>  
+   <div class="quiz"?>
+    <h1>Quiz</h1>
+    <h3>Welcome to Science Quiz</h3>
+    <p>Click on Start to begin</p>
+    <button class="startBtn">START</button>
+   </div>
+   <div class="container">
+    <div id="questions"></div>
+    <div id="answers"></div>
+   </div>
+    <form class="footer">
+        <div id="scores">Score:</div>
+            <input type="text" name="name" placeholder="nickname"/>
+            <button class="submit">Submit</button>
+        <div class="timer">Time Left:></div>
+        <span class="timer">60</span>
+        <h3 class="highscore">Highscores</h3>
+    </form>
+<script src="./assets/jS/script.js"></script>
 </body>
 </html>
