@@ -1,3 +1,4 @@
+//defining all variables
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('start-btn')
 const questionContainerElement = document.getElementById('question-container')
@@ -66,34 +67,50 @@ function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
+
+//Questions for the quiz
 const questions = [
-    {
-        question: "How many bones are in the human body?"
-        answers: [
-            { text: '206', correct: true },
-            { text: '300', correct: false }
-        ]
+    {   question: "How many bones are in the human body?",
+        options: {
+            1: "206",
+            2: "300",
+            3: "350",
+        },
+        correctAnswer: "206"
     },
-    {
-        question: 'What is the biggest planet in our solar system?'
-        answers: [
-            { text: 'Jupiter', correct: true },
-            { text: 'Earth', correct: false }
-        ]
+    {   question: "What is the biggest planet in our solar system?",
+        options: {
+            1: "Jupiter",
+            2: "Earth",
+            3: "Pluto",
+        },
+        correctAnswer: "Jupiter"    
     },
-    {
-        question: "How many teeth  does an adult human have"
-        answers: [
-            { text: '32', correct: true },
-            { text: '69', correct: false }
-        ]
+    {   question: "How many teeth  does an adult human have?",
+        options: {
+            1: "32",
+            2: "69",
+            3: "20",
+        },
+        correctAnswer: "32"
     },
-    {
-        question: "Which is the main gas that makes up the Earth's atmosphete?"
-        answers: [
-            { text: 'Nitrogen', correct: true },
-            { text: 'Oxygen', correct: false }
-        ]
+    {   question: "Which is the main gas that makes up the Earth's atmosphete?",
+        options: {
+            1: "Nitrogen",
+            2: "Oxygen",
+            3: "Carbon dioxide",
+         },
+         correctAnswer: "Nitrogen"
+    },
+    {   question: "Which is the main gas that makes up the Earth's atmosphete?",
+        options: {
+        1: "Nitrogen",
+        2: "Oxygen",
+        3: "Carbon dioxide",
+        },
+        correctAnswer: "Nitrogen"
+
     }
 ]
+
 
