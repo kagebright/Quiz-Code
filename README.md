@@ -9,4 +9,5 @@ Website: https://kagebright.github.io/brightquizcode/
 GitHub: https://github.com/kagebright/brightquizcode
 
 ## Preview
-<img width="1440" alt="Screen Shot 2022-11-23 at 12 08 31 PM" src="https://user-images.githubusercontent.com/113262558/204387473-124ecc6e-fcd6-440a-884f-977e5b937518.png">
+![Screen Shot 2022-11-28 at 4 46 02 PM](https://user-images.githubusercontent.com/113262558/204387771-cd9c7a10-558f-4e04-8f59-b4da9fd2e5bd.png)
+
