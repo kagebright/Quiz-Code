@@ -1,127 +1,87 @@
-*{
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
-    margin-left:auto;
-    margin-right:auto;
-}
-
 body {
-    background-color: rgb(32, 212, 212);
-    background-image:url(https://wallpapercave.com/wp/wp11728162.png);
-    justify-content: space-between;
-    font-family: 'Times New Roman', Times, serif;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image:url(https://wallpapercave.com/wp/wp11728162.png);
 }
 
-h1{
-    margin-top: 45px auto;
-    color:rgb(72, 65, 65);
-    text-align: center;
-}
-
-p{
-  color: white;
-  margin: 20px;
-}
-
-h3{
-  margin-left: 20px;;
-  color: white;
-}
-
-.startBtn{
-   width: 100px; 
-   height:50px;
-   color:#007bff;
-   border-radius:10px;
-   text-align:center;
-   cursor: pointer;
-   justify-content: center;
-   margin: 0;
-   display: block;
-
-}
-
-.timer {
-  height: 50px;
-  width:50px;
-  border-radius: 8px;
-  background-color: white;
+.quiz {
+  background-color: #333;
+  color: #fff;
   text-align: center;
-  line-height: 50px;
-  font-size: 30px;
-  color: rgb(215, 13, 19);
-  display: block;
-  white-space: nowrap;
 }
 
-.submit{
-    background-color: #007bff;
-    height:30px;
-    width: 100px;
-    text-align: center;
-    border-radius: 5px;
+.quiz h1 {
+  margin: 0;
+  padding: 20px 0;
 }
 
-input{
-    height: 30px;
-    justify-content: space-between;
-}
-.startBtn:hover{
-    color: rgb(83, 137, 83);
+.quiz h3 {
+  margin: 0;
+  padding: 10px 0;
+  font-size: 16px;
 }
 
-.timer {
-    width: 250px;
-    height: 30px;
-    border-radius: 5px;
-    background-color: white;
-    text-align: center;
-    line-height: 50px;
-    font-size: 20px;
-    font-weight:bold;
-    color: #000;
-    display: block;
-    white-space: nowrap;
-  }
-  
-  #questions {
-    padding: 25px;
-    height: 450px;
-    max-width: 700px;
-    border-radius: 8px;
-    cursor: pointer;
-    border-radius: 8px;
-    background-color: #7192a2;
-    text-align: center;
-    line-height: 50px;
-    font-size: 30px;
-    color: rgb(14, 14, 72);
-    display: block;
-    margin: 50 auto;
-    overflow-wrap:inherit ;
-  }
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
 
-  .footer {
-    padding: 25px;
-    height: 350px;
-    max-width: 700px;
-    border-radius: 8px;
-    cursor: pointer;
-    border-radius: 8px;
-    background-color:rgb(188, 195, 195);;
-    text-align: center;
-    line-height: 50px;
-    font-size: 30px;
-    color: rgb(16, 10, 10);
-    display: block;
-    margin: 50 auto;
-  }  
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 20px auto;
+}
 
-  #scores {
-    color: rgb(72, 65, 65);
-  }
-  .highscore {
-    color: azure;
-  }
+#questions, #answers {
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+  padding: 20px;
+}
+
+.footer form {
+  display: flex;
+  align-items: center;
+}
+
+.footer input[type="text"] {
+  width: 200px;
+  height: 30px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+.footer button {
+  width: 100px;
+  height: 30px;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.footer .timer {
+  margin: 0 20px;
+  font-size: 14px;
+}
+
+.footer .highscore {
+  margin: 0;
+  font-size: 14px;
+}

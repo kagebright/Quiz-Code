@@ -8,23 +8,27 @@
     <title>Code Quiz</title>
 </head>
 <body>
-   <div class="quiz">
-    <h1>Coding Quiz</h1>
-    <h3>Welcome to Science Java Script Quiz! Please answer these questions to test your knowledge on these science topics</h3>
-    <p>Click on Start to begin</p>
-    <button class="startBtn" id="startQuiz">START</button>
-   </div>
-   <div class="container">
-    <div id="questions"></div>
-    <div id="answers"></div>
-   </div>
-    <form class="footer">
-        <div id="scores">Score:</div>
+    <header class="quiz">
+        <h1>Coding Quiz</h1>
+        <h3>Welcome to Science Java Script Quiz! Please answer these questions to test your knowledge on these science topics</h3>
+    </header>
+    <main>
+        <p>Click on Start to begin</p>
+        <button class="startBtn" id="startQuiz">START</button>
+        <div class="container">
+            <div id="questions"></div>
+            <div id="answers"></div>
+        </div>
+    </main>
+    <footer class="footer">
+        <form>
+            <div id="scores">Score:</div>
             <input type="text" name="name" placeholder="nickname"/>
             <button class="submit">Submit</button>
-        <div class="timer">Time Left: 60</div>
-        <h3 class="highscore">Highscores</h3>
-    </form>
-<script src="./assets/jS/script.js"></script>
+            <div class="timer">Time Left: 60</div>
+            <h3 class="highscore">Highscores</h3>
+        </form>
+    </footer>
+    <script src="./assets/jS/script.js"></script>
 </body>
 </html>
